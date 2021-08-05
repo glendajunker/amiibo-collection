@@ -1,11 +1,17 @@
 :root {
-  --red: #E70620;
+  --red: #e70620;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a {
@@ -19,17 +25,37 @@ a:hover {
 
 h1 {
   text-align: center;
-  padding-top: 2em;
+  padding-top: 1.5em;
   margin: 0;
 }
 
-.bg-img {
-  background-image:url('header-bg.jpg');
-  background-repeat: repeat-x;
-  background-position: top center;
+h2 {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 300;
+  margin: 0.5em;
 }
 
+h3 {
+  text-align: center;
+}
 
+.bg-img {
+  background-image: url("header-bg.jpg");
+  background-repeat: repeat-x;
+  background-position: top center;
+  flex: 1 0 auto;
+}
+
+.spinner-wrapper {
+  margin-top: 3em;
+}
+
+.loading-spinner {
+  margin: auto;
+  padding: 2em 0;
+  display: block;
+}
 
 /* BROWSE BY */
 
@@ -42,7 +68,7 @@ h1 {
 }
 
 .browse-by-item p {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   padding: 2.5em 2em;
   font-size: 1em;
   font-weight: bold;
@@ -53,16 +79,14 @@ h1 {
   width: 275px;
 }
 
-
-
 /* CHARACTERS LIST */
 
 .char-list-wrapper {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto 3em;
+  margin: 2.5em auto 2.5em;
   width: 90%;
-  max-width: 700px;
+  max-width: 750px;
   justify-content: space-evenly;
 }
 
@@ -75,7 +99,7 @@ h1 {
 }
 
 .char-list-img-wrapper {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -98,4 +122,10 @@ h1 {
   font-size: 0.8em;
   font-weight: bold;
   margin-top: 1em;
+}
+
+.view-more {
+  text-decoration: none;
+  text-align: center;
+  display: block;
 }

@@ -1,7 +1,13 @@
 <template>
   <div class="bg-img">
     <h1>Browse by Game</h1>
-    <div v-if="isLoading">Loading...</div>
+    <div v-if="isLoading" class="spinner-wrapper">
+      <img
+        src="../assets/spinner.gif"
+        alt="Loading..."
+        class="loading-spinner"
+      />
+    </div>
     <div v-if="error">
       <pre>{{ error }}</pre>
     </div>
@@ -23,7 +29,7 @@ export default {
     return {
       isLoading: false,
       error: null,
-      games: null,
+      games: null
     };
   },
   mounted() {
@@ -32,7 +38,9 @@ export default {
       .getGames()
       .then(
         (response) => {
-          this.games = new Set(response.amiibo.map(({ gameSeries }) => gameSeries))
+          this.games = new Set(
+            response.amiibo.map(({ gameSeries }) => gameSeries)
+          );
         },
         (error) => {
           this.error = error;
@@ -41,6 +49,6 @@ export default {
       .finally(() => {
         this.isLoading = false;
       });
-  },
+  }
 };
 </script>
